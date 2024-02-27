@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import os
+from config import DB_CONFIG
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -75,8 +77,12 @@ WSGI_APPLICATION = 'taskmanagerbackend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'taskmanager_db',
+        'USER': DB_CONFIG["USER"],
+        'PASSWORD': DB_CONFIG["PASSWORD"],
+        'HOST': 'localhost',  # Set to the host where your PostgreSQL server is running
+        'PORT': '5432',      # Default PostgreSQL port
     }
 }
 
@@ -105,7 +111,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Brazil/East' # Configure this based on your time zone
 
 USE_I18N = True
 
