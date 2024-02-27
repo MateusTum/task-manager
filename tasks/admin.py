@@ -6,5 +6,8 @@ from .models import Task, Group
 class TaskAdmin(admin.ModelAdmin):
     list_display = ('name', 'completed', 'priority', 'created_at', 'updated_at', 'group')
 
+class GroupAdmin(admin.ModelAdmin):
+    list_display = ('name', 'priority', 'created_at', 'updated_at')
+
 admin.site.register(Task, TaskAdmin)
-admin.site.register(Group)
+admin.site.register(Group, GroupAdmin)

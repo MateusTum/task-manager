@@ -3,8 +3,20 @@ from django.db import models
 # Create your models here.
 
 class Group(models.Model):
+    PRIORITY_CHOICES = [
+        ('L', 'Low'),
+        ('N', 'Normal'),
+        ('H', 'High'),
+        ('VH', 'Very High'),
+    ]
+
     name = models.CharField(max_length=255)
     description = models.TextField(blank=True)
+
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    priority = models.CharField(max_length=2, choices=PRIORITY_CHOICES, default='N')
 
     def __str__(self):
         return self.name
