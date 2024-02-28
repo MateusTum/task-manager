@@ -8,5 +8,5 @@ class TaskSerializer(serializers.ModelSerializer):
 
 class GroupSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Task
+        model = Group
         fields = '__all__'
