@@ -20,4 +20,5 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('tasks.urls')),  # Adjust the path as needed
+    path('api/', include('customusers.urls')),  # Adjust the path as needed
 ]

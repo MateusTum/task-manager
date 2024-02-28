@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'tasks',
     # Custom users app
     'customusers',
+    # Rest framework
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
