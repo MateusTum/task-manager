@@ -2,8 +2,6 @@
 
 import { useState, FormEvent } from "react";
 
-
-
 const LoginForm = () => {
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
